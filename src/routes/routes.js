@@ -1,7 +1,7 @@
 const routes = [
     {
       to: "/",
-      text: "Home"
+      text: "Inicio"
     },
     {
       to: "/blog",
@@ -9,15 +9,15 @@ const routes = [
     },
     {
       to: "/login",
-      text: "Login"
+      text: "Iniciar sesión"
     },
     {
       to: "/profile",
-      text: "Profile"
+      text: "Perfil"
     },
     {
       to: "/logout",
-      text: "Logout"
+      text: "Cerrar sesión"
     },
 ]
 export { routes }

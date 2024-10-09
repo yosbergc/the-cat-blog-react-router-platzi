@@ -1,7 +1,7 @@
 function Logout() {
     return (
         <main>
-            <h1>Logout</h1>
+            <h1>Cerrar sesión</h1>
         </main>
     )
 }

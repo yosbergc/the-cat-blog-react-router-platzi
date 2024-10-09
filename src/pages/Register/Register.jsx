@@ -1,7 +1,7 @@
 function Register() {
     return (
         <main>
-            <h1>Register</h1>
+            <h1>Registrar</h1>
         </main>
     )
 }

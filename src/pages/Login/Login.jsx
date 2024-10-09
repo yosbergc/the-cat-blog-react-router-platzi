@@ -5,7 +5,7 @@ function Login() {
     const passwordId = useId(); 
     return (
         <main>
-            <h1 className="centered">Login</h1>
+            <h1 className="centered">Iniciar sesión</h1>
             <form>
                 <label htmlFor={emailId}>Tu correo electrónico</label>
                 <input type="email" name="Email" id={emailId} />
