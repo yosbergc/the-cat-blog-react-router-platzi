@@ -15,8 +15,8 @@ const users = [
         role: "editor"
     },
     {
-        username: "gndx",
-        password: "gndx2010",
+        username: "yosbergc",
+        password: "yosber",
         role: "user"
     }
 ]

@@ -46,7 +46,7 @@ function Post() {
                                     <strong>{comment.author}</strong>
                                 </section>
                                 {
-                        (user?.role === 'admin' || user?.username === postSingle.comments[index]) && <button onClick={() => handleCommentDelete(comment.commentContent)} className="secondary-btn">Eliminar comentario</button>
+                        (user?.role === 'admin' || user?.username === postSingle.comments[index].author) && <button onClick={() => handleCommentDelete(comment.commentContent)} className="secondary-btn">Eliminar comentario</button>
                                 }
                             </article>
                         })}
