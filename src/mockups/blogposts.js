@@ -1,7 +1,7 @@
-[
+export const blogposts = [
     {
         "title": "¿Por qué la programación es importante",
-        "slug": "/por-que-la-programacion-es-importante",
+        "slug": "por-que-la-programacion-es-importante",
         "content": "La programación es importante porque es una de las areas más importantes de la historia.",
         "author": "sebastianyatra",
         "comments": [
@@ -17,7 +17,7 @@
     },
     {
         "title": "¿Qué es React?",
-        "slug": "/que-es-react",
+        "slug": "que-es-react",
         "content": "React es la mejor librería de UI que tiene la web.",
         "author": "yosbergc",
         "comments": [
@@ -29,7 +29,7 @@
     },
     {
         "title": "¿Qué es Vue?",
-        "slug": "/que-es-vue",
+        "slug": "que-es-vue",
         "content": "Vue es la mejor librería de UI que tiene la web.",
         "author": "gndx",
         "comments": [
@@ -41,7 +41,7 @@
     },
     {
         "title": "¿Cuál es el mejor framework para trabajar?",
-        "slug": "/cual-es-el-mejor-framework-para-trabajar",
+        "slug": "cual-es-el-mejor-framework-para-trabajar",
         "content": "El mejor framework es React.",
         "author": "yosbergc",
         "comments": []

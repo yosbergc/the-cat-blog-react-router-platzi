@@ -5,7 +5,6 @@ import { users } from "../mockups/users";
 
 function useAuth() {
     const [user, setUser] = useState(null)
-    console.log(user)
     const navigate = useNavigate()
     function onLogin({ username, password }) {
         const user = users.find(user => {

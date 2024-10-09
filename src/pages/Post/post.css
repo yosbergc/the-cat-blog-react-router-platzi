@@ -1,0 +1,26 @@
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.article-header button {
+    margin-top: 0px;
+}
+.blog-comments {
+    margin-top: 20px;
+}
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.comment-single {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    color: white;
+}
+.blog-comments h2 {
+    margin-bottom: 10px;
+}

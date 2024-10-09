@@ -4,7 +4,6 @@ import { Home } from "./pages/Home/Home"
 import { Blog } from "./pages/Blog/Blog"
 import { Post } from "./pages/Post/Post"
 import { Login } from "./pages/Login/Login"
-import { Logout } from "./pages/Logout/Logout"
 import { Profile } from "./pages/Profile/Profile"
 import { NotFound } from "./pages/NotFound/NotFound"
 import { UserProvider } from "./context/UserContext"
@@ -20,12 +19,6 @@ function App() {
               <Route path="/blog" element={<Blog />}/>
               <Route path="/blog/:post" element={<Post />}/>
               <Route path="/login" element={<Login />}/>
-              <Route
-                path="/logout"
-                element={<ProtectedRoute>
-                <Logout />
-              </ProtectedRoute>}
-              />
               <Route
                 path="/profile"
                 element={<ProtectedRoute>
