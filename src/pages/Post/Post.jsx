@@ -1,14 +1,25 @@
 import { useParams } from "react-router-dom"
-import { blogposts } from "../../mockups/blogposts"
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { BlogContext } from "../../context/BlogContext"
+import { UserContext } from "../../context/UserContext"
 import './post.css'
 function Post() {
     const { post } = useParams()
     const navigate = useNavigate()
-    const postSingle = blogposts.find(blog => blog.slug === post)
-    
+    const { user } = useContext(UserContext)
+    const { blogs, deleteComment, deletePost } = useContext(BlogContext)
+    const postSingle = blogs.find(blog => blog.slug === post)
+
     function handleBack() {
         navigate('/blog')
+    }
+    function handlePostDelete() {
+        deletePost(post)
+        handleBack()
+    }
+    function handleCommentDelete(commentContent) {
+        deleteComment(commentContent, post)
     }
     return (
         <main>
@@ -16,6 +27,9 @@ function Post() {
                 <header className="article-header">
                     <h1>{postSingle?.title}</h1>
                     <button onClick={handleBack}>Volver al blog</button>
+                    {
+                        (user?.role === 'admin' || user?.username === postSingle.author) && <button onClick={handlePostDelete} className="secondary-btn">Eliminar post</button>
+                    }
                 </header>
                 <p><strong>{postSingle.author}</strong></p>
                 <br />
@@ -25,10 +39,15 @@ function Post() {
                 <h2>Comentarios</h2>
                 {
                     postSingle.comments.length > 0 ? <section className="comments-container">
-                        {postSingle.comments.map(comment => {
+                        {postSingle.comments.map((comment, index) => {
                             return <article key={comment.author} className="comment-single">
-                                <p>{comment.commentContent}</p>
-                                <strong>{comment.author}</strong>
+                                <section className="main-coment">
+                                    <p>{comment.commentContent}</p>
+                                    <strong>{comment.author}</strong>
+                                </section>
+                                {
+                        (user?.role === 'admin' || user?.username === postSingle.comments[index]) && <button onClick={() => handleCommentDelete(comment.commentContent)} className="secondary-btn">Eliminar comentario</button>
+                                }
                             </article>
                         })}
                         </section> : "No commments"

@@ -8,12 +8,14 @@ import { Profile } from "./pages/Profile/Profile"
 import { NotFound } from "./pages/NotFound/NotFound"
 import { UserProvider } from "./context/UserContext"
 import { ProtectedRoute } from "./hooks/useAuth.jsx"
+import { ProvideBlog } from "./context/BlogContext.jsx"
 function App() {
   return (
     <>
       <BrowserRouter>
         <UserProvider>
-          <Header/>
+          <ProvideBlog>
+            <Header/>
             <Routes>
               <Route path="/" element={<Home />}/>
               <Route path="/blog" element={<Blog />}/>
@@ -27,6 +29,7 @@ function App() {
                 />
               <Route path="*" element={<NotFound />}/>
             </Routes>
+          </ProvideBlog>
         </UserProvider>
       </BrowserRouter>
     </>
