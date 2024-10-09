@@ -1,0 +1,13 @@
+.website-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: rgb(246, 246, 246);
+    max-width: 1200px;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+.website-header .website-logo {
+    height: 60px;
+}
