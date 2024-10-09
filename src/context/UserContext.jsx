@@ -3,10 +3,11 @@ import { useAuth } from "../hooks/useAuth.jsx";
 const UserContext = createContext();
 
 function UserProvider({ children }) {
-    const { onLogin, user } = useAuth()
+    const { onLogin, user, onLogout } = useAuth()
     return <UserContext.Provider value={{
         user,
-        onLogin
+        onLogin,
+        onLogout
     }}>
         { children }
     </UserContext.Provider>

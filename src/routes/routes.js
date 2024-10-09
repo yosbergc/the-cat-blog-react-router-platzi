@@ -16,11 +16,6 @@ const routes = [
       to: "/profile",
       text: "Perfil",
       loggedOnly: true
-    },
-    {
-      to: "/logout",
-      text: "Cerrar sesión",
-      loggedOnly: true
     }
 ]
 export { routes }

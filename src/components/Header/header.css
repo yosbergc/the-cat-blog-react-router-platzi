@@ -11,3 +11,13 @@
 .website-header .website-logo {
     height: 60px;
 }
+.right-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.right-header button {
+    padding: 5px;
+    margin-top: 0px;
+    width: fit-content;
+}
