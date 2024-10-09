@@ -6,6 +6,7 @@ import { Post } from "./pages/Post/Post"
 import { Login } from "./pages/Login/Login"
 import { Logout } from "./pages/Logout/Logout"
 import { Profile } from "./pages/Profile/Profile"
+import { Register } from "./pages/Register/Register"
 import { NotFound } from "./pages/NotFound/NotFound"
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/logout" element={<Logout />}/>
           <Route path="/profile" element={<Profile />}/>
+          <Route path="/register" element={<Register />}/>
           <Route path="*" element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
