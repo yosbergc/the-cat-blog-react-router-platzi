@@ -6,25 +6,35 @@ import { Post } from "./pages/Post/Post"
 import { Login } from "./pages/Login/Login"
 import { Logout } from "./pages/Logout/Logout"
 import { Profile } from "./pages/Profile/Profile"
-import { Register } from "./pages/Register/Register"
 import { NotFound } from "./pages/NotFound/NotFound"
-
+import { UserProvider } from "./context/UserContext"
+import { ProtectedRoute } from "./hooks/useAuth.jsx"
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Header/>
-      
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/blog" element={<Blog />}/>
-          <Route path="/blog/:post" element={<Post />}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/logout" element={<Logout />}/>
-          <Route path="/profile" element={<Profile />}/>
-          <Route path="/register" element={<Register />}/>
-          <Route path="*" element={<NotFound />}/>
-        </Routes>
+      <BrowserRouter>
+        <UserProvider>
+          <Header/>
+            <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/blog" element={<Blog />}/>
+              <Route path="/blog/:post" element={<Post />}/>
+              <Route path="/login" element={<Login />}/>
+              <Route
+                path="/logout"
+                element={<ProtectedRoute>
+                <Logout />
+              </ProtectedRoute>}
+              />
+              <Route
+                path="/profile"
+                element={<ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>}
+                />
+              <Route path="*" element={<NotFound />}/>
+            </Routes>
+        </UserProvider>
       </BrowserRouter>
     </>
   )

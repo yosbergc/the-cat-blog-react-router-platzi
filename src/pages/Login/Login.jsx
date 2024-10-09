@@ -13,7 +13,6 @@ function Login() {
                 <input type="password" name="password" id={passwordId} />
                 <section className="buttons-container">
                     <button>Iniciar sesion</button>
-                    <button className="secondary-btn">Registrarse</button>
                 </section>
             </form>
         </main>
