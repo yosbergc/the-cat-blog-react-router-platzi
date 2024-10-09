@@ -1,0 +1,13 @@
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+nav ul li a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+.currentRoute {
+    text-decoration: underline;
+}

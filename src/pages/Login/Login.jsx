@@ -1,6 +1,8 @@
 function Login() {
     return (
-        <h1>Login</h1>
+        <main>
+            <h1>Login</h1>
+        </main>
     )
 }
 export { Login }

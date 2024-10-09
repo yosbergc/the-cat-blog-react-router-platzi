@@ -1,6 +1,9 @@
 function NotFound() {
     return (
-        <h1>Not Found</h1>
+        <main>
+            <p>No encontramos la página que buscabas</p>
+            <button>Volver al home</button>
+        </main>
     )
 }
 export { NotFound }

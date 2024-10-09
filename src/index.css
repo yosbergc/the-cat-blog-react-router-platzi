@@ -1,5 +1,22 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+button {
+  background-color: black;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
 }

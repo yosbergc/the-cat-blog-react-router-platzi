@@ -1,6 +1,8 @@
 function Logout() {
     return (
-        <h1>Logout</h1>
+        <main>
+            <h1>Logout</h1>
+        </main>
     )
 }
 export { Logout }

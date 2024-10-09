@@ -12,6 +12,10 @@ const routes = [
       text: "Login"
     },
     {
+      to: "/profile",
+      text: "Profile"
+    },
+    {
       to: "/logout",
       text: "Logout"
     },
