@@ -1,18 +1,23 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useLocation } from "react-router-dom";
 import { users } from "../mockups/users";
 
 function useAuth() {
     const [user, setUser] = useState(null)
     const navigate = useNavigate()
-    function onLogin({ username, password }) {
+
+    function onLogin({ username, password, location }) {
         const user = users.find(user => {
             return user.username === username && user.password === password
         })
         if (user) {
             setUser(user)
-            navigate('/')
+            if (location.state) {
+                navigate(location.state)
+            } else {
+                navigate('/')
+            }
         } else {
             console.log('Wrong data.')
         }
@@ -26,9 +31,9 @@ function useAuth() {
 
 function ProtectedRoute({ children }) {
     const { user } = useContext(UserContext)
-    console.log(user)
+    const { pathname } = useLocation()
     if (!user) {
-        return <Navigate to="/login"/>
+        return <Navigate to="/login" state={pathname}/>
     } else {
         return children
     }

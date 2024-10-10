@@ -1,9 +1,11 @@
 import { useId } from "react"
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
+import { useLocation } from "react-router-dom";
 import './login.css'
 function Login() {
     const usernameId = useId();
+    const location = useLocation()
     const passwordId = useId(); 
     const { onLogin } = useContext(UserContext)
 
@@ -16,7 +18,7 @@ function Login() {
         if (password.length === 0) return;
 
 
-        onLogin({ username, password })
+        onLogin({ username, password, location })
     }
     return (
         <main>
