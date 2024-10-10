@@ -7,7 +7,6 @@ import { Login } from "./pages/Login/Login"
 import { Profile } from "./pages/Profile/Profile"
 import { NotFound } from "./pages/NotFound/NotFound"
 import { UserProvider } from "./context/UserContext"
-import { ProtectedRoute } from "./hooks/useAuth.jsx"
 import { ProvideBlog } from "./context/BlogContext.jsx"
 function App() {
   return (
@@ -22,10 +21,8 @@ function App() {
               <Route path="/blog/:post" element={<Post />}/>
               <Route path="/login" element={<Login />}/>
               <Route
-                path="/profile"
-                element={<ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>}
+                path="/p/:username"
+                element={<Profile />}
                 />
               <Route path="*" element={<NotFound />}/>
             </Routes>
